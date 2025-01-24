@@ -276,6 +276,13 @@ cc_library {
     vendor: true
 }
 
+cc_library_shared {
+    name: "libaudioclient_shim",
+    shared_libs: ["libaudioclient", "libutils", "liblog"],
+    header_libs: ["libmedia_headers"],
+    srcs: ["libaudioclient/AudioTrack.cpp"],
+}
+
 cc_prebuilt_library_shared {
     name: "libbase-v33",
     vendor: true,
